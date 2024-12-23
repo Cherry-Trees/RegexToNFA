@@ -57,7 +57,6 @@ NFA star_expr(ExprNode *node);
 NFA make_nfa(ExprNode *node);
 
 NFA simple_expr(ExprNode *node) {
-    // printf("simpled\n");
     State *q = (State *) malloc(sizeof(State));
     State *f = (State *) malloc(sizeof(State));
 
