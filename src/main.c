@@ -298,9 +298,14 @@ void print_syntax_tree(ExprNode *root) {
 
 int main() {
 
+    FILE *in = fopen("input.txt", "r");
+    char str[256];
+    fgets(str, 256, in);
+    fclose(in);
+
     TokenStream lex;
     lex.index = 0;
-    lex.str = "(((((a|b)*)|(c*))|(v|((m*)*)))*)p";
+    lex.str = str;
     printf("INPUT: %s\n\n", lex.str);
 
     ExprNode *root = parse_expr(&lex);
